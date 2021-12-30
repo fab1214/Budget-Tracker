@@ -2,7 +2,7 @@
 let db;
 
 //establish a connect to IndexedDB database called 'budget-tracker' and set it to version 1
-const request = indexedDB.open('budget-tracker',1);
+const request = indexedDB.open('budget-tracker', 1);
 
 request.onupgradeneeded = function(e){
     //save refernce to database
@@ -14,7 +14,7 @@ request.onupgradeneeded = function(e){
 request.onsuccess = function(e){
     db = e.target.result;
 
-    if(navigator.online){
+    if(navigator.onLine){
         uploadBudget();
     }
 };
@@ -49,8 +49,8 @@ function uploadBudget() {
                     'Content-Type': 'application/json',
                 },
             })
-            .then(response => response.json())
-            .then(serverResponse => {
+            .then((response) => response.json())
+            .then((serverResponse) => {
                 if(serverResponse.message){
                     throw new Error(serverResponse);
                 }
