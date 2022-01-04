@@ -1,3 +1,7 @@
+const APP_PREFIX = 'BudgetTracker-';
+const VERSION = 'version_01';
+const CACHE_NAME = APP_PREFIX + VERSION;
+
 const FILES_TO_CACHE = [
     './index.html',
     './css/styles.css',
@@ -5,10 +9,6 @@ const FILES_TO_CACHE = [
     '../routes/api.js',
     './manifest.json'
 ];
-
-const APP_PREFIX = 'BudgetTracker-';
-const VERSION = 'version_01';
-const CACHE_NAME = APP_PREFIX + VERSION;
 
 //install service worker
 self.addEventListener('install', function (e){
